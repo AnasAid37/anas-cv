@@ -366,25 +366,27 @@ figure {
 .chart {
   width: 160px;
   height: 160px;
-  margin: 0 auto 30px auto;
+  margin: 20px auto;
   position: relative;
   text-align: center;
 }
+
 .chart span {
   position: absolute;
   top: 50%;
-  left: 0;
-  margin-top: -30px;
-  width: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: #fff;
 }
+
 .chart span strong {
   display: block;
+  font-size: 14px;
+  color: #17e7a4;
+  margin-top: 5px;
 }
-.chart canvas {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
+
 
 #fh5co-footer {
   margin-top: 50px;

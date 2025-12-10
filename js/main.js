@@ -146,11 +146,46 @@ function typeWriter(element, text, speed = 100) {
 	type();
 }
 
-// Initialize typing effect
 window.addEventListener('load', () => {
-	const heroTitle = document.querySelector('.hero-title');
-	const originalText = heroTitle.textContent;
-	typeWriter(heroTitle, originalText, 100);
+    const heroTitle = document.querySelector('.hero-title');
+    const texts = ['Anas AIT DAOUD', 'Future Millionaire'];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    
+    function typeEffect() {
+        const currentText = texts[textIndex];
+        
+        if (isDeleting) {
+            // حذف الحروف
+            heroTitle.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            // كتابة الحروف
+            heroTitle.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+        }
+        
+        let typeSpeed = 100;
+        
+        if (isDeleting) {
+            typeSpeed = 50;
+        }
+        
+		if (!isDeleting && charIndex === currentText.length) {
+            typeSpeed = 1000; // انتظر ثانيتين قبل البدء بالحذف
+            isDeleting = true;
+        } 
+        else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % texts.length; 
+            typeSpeed = 500;
+        }
+        
+        setTimeout(typeEffect, typeSpeed);
+    }
+    
+    typeEffect();
 });
 
 // Add parallax effect to background

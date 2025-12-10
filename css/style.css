@@ -212,13 +212,32 @@
         }
 
         .hero-title {
-          font-size: 4rem;
-          font-weight: 700;
-          background: linear-gradient(45deg, #ff006e, #00f5ff);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          margin-bottom: 1rem;
-        }
+    font-size: 4rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #ff006e, #00f5ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* بلوك الكتابة */
+.hero-title::after {
+    content: '';
+    width: 3px;
+    height: 1em;
+    background: linear-gradient(45deg, #ff006e, #00f5ff);
+    display: inline-block;
+    animation: blink 0.7s infinite;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
 
         .hero-subtitle {
           font-size: 1.5rem;

@@ -1,364 +1,467 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anas Ait Daoud - Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* الفيديو كخلفية */
+      #myVideo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover; /* يخليه يعمر الشاشة بلا تشويه */
+        z-index: -2;
+        filter: brightness(0.6); /* نقص الإضاءة */
+      }
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Anas Ait Daoud - Portfolio</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css">
-</head>
+      /* طبقة غامقة خفيفة فوق الفيديو */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.25);
+        z-index: -1;
+      }
+    </style>
+  </head>
 
-<body>
-	<!-- Animated Background -->
-	<div class="bg-animation"></div>
-	<div class="bg-particles" id="particles"></div>
+  <body>
+    <video autoplay muted loop id="myVideo">
+      <source src="assets/rain.mp4" type="video/mp4" />
+    </video>
+    <div class="overlay"></div>
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+    <div class="bg-particles" id="particles"></div>
 
-	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-		<div class="container">
-			<a class="navbar-brand fw-bold" href="#home">Anas Ait Daoud</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav ms-auto">
-					<li class="nav-item">
-						<a class="nav-link" href="#home"><i class="fas fa-home me-2"></i>Accueil</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#education"><i class="fas fa-graduation-cap me-2"></i>Formation</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#experience"><i class="fas fa-briefcase me-2"></i>Expérience</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#skills"><i class="fas fa-tools me-2"></i>Compétences</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#home">Anas Ait Daoud</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home"
+                ><i class="fas fa-home me-2"></i>Accueil</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#education"
+                ><i class="fas fa-graduation-cap me-2"></i>Formation</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience"
+                ><i class="fas fa-briefcase me-2"></i>Expérience</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills"
+                ><i class="fas fa-tools me-2"></i>Compétences</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-	<!-- Scroll Indicator -->
-	<div class="scroll-indicator">
-		<div class="scroll-dot" data-target="#home"></div>
-		<div class="scroll-dot" data-target="#education"></div>
-		<div class="scroll-dot" data-target="#experience"></div>
-		<div class="scroll-dot" data-target="#skills"></div>
-	</div>
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-dot" data-target="#home"></div>
+      <div class="scroll-dot" data-target="#education"></div>
+      <div class="scroll-dot" data-target="#experience"></div>
+      <div class="scroll-dot" data-target="#skills"></div>
+    </div>
 
-	<!-- Hero Section -->
-	<section id="home" class="section hero-section">
-		<div class="container">
-			<div class="row justify-content-center text-center">
-				<div class="col-lg-8">
-					<div class="profile-image">
-						<img src="images/profile_img.jpeg" alt="Anas Ait Daoud">
-					</div>
-					<h1 class="hero-title"></h1>
-					<p class="hero-subtitle">Développeur Web Full Stack</p>
-					<p class="lead mb-4">
-						Développeur web full stack ambitieux et passionné, je transforme les idées en projets numériques
-						concrets.
-						Avec une solide maîtrise de <strong>PHP, JavaScript, ReactJS et Laravel</strong>, je crée des
-						sites WordPress sur mesure,
-						gère efficacement des bases de données <strong>SQL/NoSQL</strong> et conçois des contenus vidéo
-						motivants pour inspirer et impacter.
-						Mon objectif est de bâtir des solutions innovantes tout en développant ma carrière en ligne, en
-						combinant créativité, technique et entrepreneuriat.
-					</p>
+    <!-- Hero Section -->
+    <section id="home" class="section hero-section">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+            <div class="profile-image">
+              <img src="images/profile_img.jpeg" alt="Anas Ait Daoud" />
+            </div>
+            <h1 class="hero-title"></h1>
+            <p class="hero-subtitle">Développeur Web Full Stack</p>
+            <p class="lead mb-4">
+              Développeur web full stack ambitieux et passionné, je transforme
+              les idées en projets numériques concrets. Avec une solide maîtrise
+              de <strong>PHP, JavaScript, ReactJS et Laravel</strong>, je crée
+              des sites WordPress sur mesure, gère efficacement des bases de
+              données <strong>SQL/NoSQL</strong> et conçois des contenus vidéo
+              motivants pour inspirer et impacter. Mon objectif est de bâtir des
+              solutions innovantes tout en développant ma carrière en ligne, en
+              combinant créativité, technique et entrepreneuriat.
+            </p>
 
+            <div class="contact-card">
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <i class="fas fa-phone text-info me-2"></i>
+                  <strong>+212 605 816 821</strong>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <i class="fas fa-map-marker-alt text-danger me-2"></i>
+                  <strong>Tahanaout, rue baghdad</strong>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <i class="fas fa-language text-warning me-2"></i>
+                  <strong>AR | FR | EN | AMZ</strong>
+                </div>
+              </div>
+            </div>
 
-					<div class="contact-card">
-						<div class="row">
-							<div class="col-md-4 mb-3">
-								<i class="fas fa-phone text-info me-2"></i>
-								<strong>+212 605 816 821</strong>
-							</div>
-							<div class="col-md-4 mb-3">
-								<i class="fas fa-map-marker-alt text-danger me-2"></i>
-								<strong>Tahanaout, rue baghdad</strong>
-							</div>
-							<div class="col-md-4 mb-3">
-								<i class="fas fa-language text-warning me-2"></i>
-								<strong>AR | FR | EN | AMZ</strong>
-							</div>
-						</div>
-					</div>
+            <div class="social-links mt-4">
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=anasdaitdaouf@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ouvrir Gmail pour envoyer un email"
+              >
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/anas-ait-daoud-02128a29b/"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/anasaid37"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-					<div class="social-links mt-4">
-						<a href="https://mail.google.com/mail/?view=cm&fs=1&to=anasdaitdaouf@gmail.com" target="_blank"
-							rel="noopener noreferrer" aria-label="Ouvrir Gmail pour envoyer un email">
-							<i class="fas fa-envelope"></i>
-						</a>
-						<a href="https://www.linkedin.com/in/anas-ait-daoud-02128a29b/"><i
-								class="fab fa-linkedin"></i></a>
-						<a href="https://github.com/anasaid37"><i class="fab fa-github"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <!-- Education Section -->
+    <section id="education" class="section">
+      <div class="container">
+        <h2 class="section-title">Formation</h2>
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="timeline">
+              <div class="timeline-item">
+                <h3 class="text-info">2023 - 2025</h3>
+                <h4 class="text-warning">ISTA NTIC SYBA – MARRAKECH</h4>
+                <p class="mb-0">
+                  Diplôme de Technicien Spécialisé en Développement Digital
+                  (Full Stack Web)
+                </p>
+              </div>
+              <div class="timeline-item">
+                <h3 class="text-info">2022 - 2023</h3>
+                <h4 class="text-warning">
+                  UNIVERSITÉ CADI AYYAD – FACULTÉ DES SCIENCES SEMLALIA
+                </h4>
+                <p class="mb-0">Études universitaires, Marrakech</p>
+              </div>
+              <div class="timeline-item">
+                <h3 class="text-info">2022</h3>
+                <h4 class="text-warning">Baccalauréat – Sciences</h4>
+                <p class="mb-0">Diplôme obtenu dans la filière Sciences</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-	<!-- Education Section -->
-	<section id="education" class="section">
-		<div class="container">
-			<h2 class="section-title">Formation</h2>
-			<div class="row">
-				<div class="col-lg-8 mx-auto">
-					<div class="timeline">
-						<div class="timeline-item">
-							<h3 class="text-info">2023 - 2025</h3>
-							<h4 class="text-warning">ISTA NTIC SYBA – MARRAKECH</h4>
-							<p class="mb-0">Diplôme de Technicien Spécialisé en Développement Digital (Full Stack Web)
-							</p>
-						</div>
-						<div class="timeline-item">
-							<h3 class="text-info">2022 - 2023</h3>
-							<h4 class="text-warning">UNIVERSITÉ CADI AYYAD – FACULTÉ DES SCIENCES SEMLALIA</h4>
-							<p class="mb-0">Études universitaires, Marrakech</p>
-						</div>
-						<div class="timeline-item">
-							<h3 class="text-info">2022</h3>
-							<h4 class="text-warning">Baccalauréat – Sciences</h4>
-							<p class="mb-0">Diplôme obtenu dans la filière Sciences</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-title">Expérience Professionnelle</h2>
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <div class="timeline">
+              <!-- Projet 1 -->
+              <div class="timeline-item">
+                <h3 class="text-info">2025</h3>
+                <h4 class="text-warning">Développeur Web — Gestion de Stock</h4>
+                <h5 class="text-muted">
+                  Pneumatique Aqabli, Ourika, Marrakech
+                </h5>
+                <p>
+                  Développement d'une application web de
+                  <strong>gestion de stock de pneus</strong> (PHP + MySQL).
+                  Fonctionnalités : gestion des produits, suivi des sorties,
+                  alertes de stock faible, tableau de bord avec indicateurs
+                  visuels, gestion des rôles utilisateurs.
+                </p>
+              </div>
 
-	<!-- Experience Section -->
-	<section id="experience" class="section">
-		<div class="container">
-			<h2 class="section-title">Expérience Professionnelle</h2>
-			<div class="row">
-				<div class="col-lg-10 mx-auto">
-					<div class="timeline">
+              <!-- Projet 2 -->
+              <div class="timeline-item">
+                <h3 class="text-info">2025</h3>
+                <h4 class="text-warning">
+                  Développeur Web — Site officiel & Prise de RDV
+                </h4>
+                <h5 class="text-muted">
+                  Pneumatique Aqabli, Ourika, Marrakech
+                </h5>
+                <p>
+                  Conception et réalisation du
+                  <strong>site vitrine officiel</strong> de l’entreprise avec
+                  fonctionnalités avancées :
+                </p>
+                <ul class="mt-2">
+                  <li>
+                    Module de
+                    <strong>prise de rendez-vous en ligne</strong> pour les
+                    services
+                  </li>
+                  <li>
+                    Espace <strong>administrateur</strong> pour gérer les RDV et
+                    les commandes
+                  </li>
+                  <li>
+                    Gestion et affichage des
+                    <strong>produits proposés</strong> par l’entreprise
+                  </li>
+                </ul>
+                <p>Technologies : PHP, MySQL, HTML, CSS, JavaScript</p>
+              </div>
 
-						<!-- Projet 1 -->
-						<div class="timeline-item">
-							<h3 class="text-info">2025</h3>
-							<h4 class="text-warning">Développeur Web — Gestion de Stock</h4>
-							<h5 class="text-muted">Pneumatique Aqabli, Ourika, Marrakech</h5>
-							<p>Développement d'une application web de <strong>gestion de stock de pneus</strong> (PHP +
-								MySQL).
-								Fonctionnalités : gestion des produits, suivi des sorties, alertes de stock faible,
-								tableau de bord avec indicateurs visuels, gestion des rôles utilisateurs.</p>
-						</div>
+              <!-- Projet 3 -->
+              <div class="timeline-item">
+                <h3 class="text-info">2025</h3>
+                <h4 class="text-warning">
+                  Développeur Web — Gestion des Crédits Clients
+                </h4>
+                <h5 class="text-muted">
+                  Pneumatique Aqabli, Ourika, Marrakech
+                </h5>
+                <p>
+                  Développement d'une application web de
+                  <strong>gestion des crédits clients</strong> (Laravel +
+                  MySQL). Fonctionnalités : gestion des clients, suivi des
+                  paiements, calcul automatique du reste à payer, historique
+                  détaillé.
+                </p>
+              </div>
 
-						<!-- Projet 2 -->
-						<div class="timeline-item">
-							<h3 class="text-info">2025</h3>
-							<h4 class="text-warning">Développeur Web — Site officiel & Prise de RDV</h4>
-							<h5 class="text-muted">Pneumatique Aqabli, Ourika, Marrakech</h5>
-							<p>Conception et réalisation du <strong>site vitrine officiel</strong> de l’entreprise avec
-								fonctionnalités avancées :</p>
-							<ul class="mt-2">
-								<li>Module de <strong>prise de rendez-vous en ligne</strong> pour les services</li>
-								<li>Espace <strong>administrateur</strong> pour gérer les RDV et les commandes</li>
-								<li>Gestion et affichage des <strong>produits proposés</strong> par l’entreprise</li>
-							</ul>
-							<p>Technologies : PHP, MySQL, HTML, CSS, JavaScript</p>
-						</div>
+              <!-- Projet Food -->
+              <div class="timeline-item">
+                <h3 class="text-info">2024</h3>
+                <h4 class="text-warning">Projet Académique — Food Project</h4>
+                <p>
+                  Collaboration sur un projet de groupe pour concevoir une
+                  application de livraison de nourriture en ligne, un site
+                  dynamique utilisant <strong>React</strong> pour le front-end
+                  et <strong>Laravel</strong> pour le back-end.
+                </p>
+              </div>
 
-						<!-- Projet 3 -->
-						<div class="timeline-item">
-							<h3 class="text-info">2025</h3>
-							<h4 class="text-warning">Développeur Web — Gestion des Crédits Clients</h4>
-							<h5 class="text-muted">Pneumatique Aqabli, Ourika, Marrakech</h5>
-							<p>Développement d'une application web de <strong>gestion des crédits clients</strong>
-								(Laravel + MySQL).
-								Fonctionnalités : gestion des clients, suivi des paiements, calcul automatique du reste
-								à payer, historique détaillé.</p>
-						</div>
+              <!-- Auto-entrepreneur -->
+              <div class="timeline-item">
+                <h3 class="text-info">2023 - Aujourd'hui</h3>
+                <h4 class="text-warning">
+                  Auto-entrepreneur — Activités numériques & e-commerce
+                </h4>
+                <p>Création et gestion de plusieurs projets web personnels :</p>
+                <ul class="mt-2">
+                  <li>
+                    Vente d'abonnements IPTV via un site WordPress personnalisé
+                    (<strong>FleetIPTV</strong>)
+                  </li>
+                  <li>
+                    Développement du site <strong>Tsyshoop</strong>, spécialisé
+                    dans l'affiliation de produits
+                  </li>
+                  <li>
+                    Projets variés avec <strong>Node.js</strong> et un
+                    mini-projet <strong>Odoo</strong> en Python
+                  </li>
+                  <li>
+                    Application de compétences en PHP, JavaScript, WordPress,
+                    Laravel, React
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-						<!-- Projet Food -->
-						<div class="timeline-item">
-							<h3 class="text-info">2024</h3>
-							<h4 class="text-warning">Projet Académique — Food Project</h4>
-							<p>Collaboration sur un projet de groupe pour concevoir une application de livraison de
-								nourriture en ligne, un site dynamique utilisant <strong>React</strong> pour le
-								front-end
-								et <strong>Laravel</strong> pour le back-end.</p>
-						</div>
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Compétences Techniques</h2>
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="skill-card" style="--skill-percentage: 95%">
+              <div class="skill-percentage">95%</div>
+              <div class="skill-name">HTML/CSS</div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="skill-card" style="--skill-percentage: 95%">
+              <div class="skill-percentage">95%</div>
+              <div class="skill-name">PHP</div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="skill-card" style="--skill-percentage: 93%">
+              <div class="skill-percentage">93%</div>
+              <div class="skill-name">JavaScript</div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="skill-card" style="--skill-percentage: 92%">
+              <div class="skill-percentage">92%</div>
+              <div class="skill-name">ReactJS</div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="skill-card" style="--skill-percentage: 90%">
+              <div class="skill-percentage">90%</div>
+              <div class="skill-name">Laravel</div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="skill-card" style="--skill-percentage: 88%">
+              <div class="skill-percentage">88%</div>
+              <div class="skill-name">WordPress</div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="skill-card" style="--skill-percentage: 85%">
+              <div class="skill-percentage">85%</div>
+              <div class="skill-name">SQL/NoSQL</div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="skill-card" style="--skill-percentage: 80%">
+              <div class="skill-percentage">80%</div>
+              <div class="skill-name">PostgreSQL</div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="skill-card" style="--skill-percentage: 85%">
+              <div class="skill-percentage">85%</div>
+              <div class="skill-name">Git/GitHub</div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="skill-card" style="--skill-percentage: 75%">
+              <div class="skill-percentage">75%</div>
+              <div class="skill-name">Docker</div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="skill-card" style="--skill-percentage: 90%">
+              <div class="skill-percentage">90%</div>
+              <div class="skill-name">VS Code</div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="skill-card" style="--skill-percentage: 78%">
+              <div class="skill-percentage">78%</div>
+              <div class="skill-name">Linux</div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="skill-card" style="--skill-percentage: 80%">
+              <div class="skill-percentage">80%</div>
+              <div class="skill-name">SEO & Publicité</div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="skill-card" style="--skill-percentage: 80%">
+              <div class="skill-percentage">80%</div>
+              <div class="skill-name">Montage Vidéo</div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="skill-card" style="--skill-percentage: 85%">
+              <div class="skill-percentage">85%</div>
+              <div class="skill-name">Agile & Teamwork</div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-						<!-- Auto-entrepreneur -->
-						<div class="timeline-item">
-							<h3 class="text-info">2023 - Aujourd'hui</h3>
-							<h4 class="text-warning">Auto-entrepreneur — Activités numériques & e-commerce</h4>
-							<p>Création et gestion de plusieurs projets web personnels :</p>
-							<ul class="mt-2">
-								<li>Vente d'abonnements IPTV via un site WordPress personnalisé
-									(<strong>FleetIPTV</strong>)</li>
-								<li>Développement du site <strong>Tsyshoop</strong>, spécialisé dans l'affiliation de
-									produits</li>
-								<li>Projets variés avec <strong>Node.js</strong> et un mini-projet <strong>Odoo</strong>
-									en Python</li>
-								<li>Application de compétences en PHP, JavaScript, WordPress, Laravel, React</li>
-							</ul>
-						</div>
+	<footer style="background-color: #000;">
+			  <div class="container text-center py-4">
+		<p class="mb-0 text-white">
+		  &copy; 2025 Anas Ait Daoud. Tous droits réservés.
+		</p>
+	  </div>
+	</footer>
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-	<!-- Skills Section -->
-	<section id="skills" class="section">
-		<div class="container">
-			<h2 class="section-title">Compétences Techniques</h2>
-			<div class="row">
-				<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-					<div class="skill-card" style="--skill-percentage: 95%;">
-						<div class="skill-percentage">95%</div>
-						<div class="skill-name">HTML/CSS</div>
-						<div class="skill-progress">
-							<div class="skill-progress-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-					<div class="skill-card" style="--skill-percentage: 95%;">
-						<div class="skill-percentage">95%</div>
-						<div class="skill-name">PHP</div>
-						<div class="skill-progress">
-							<div class="skill-progress-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-					<div class="skill-card" style="--skill-percentage: 93%;">
-						<div class="skill-percentage">93%</div>
-						<div class="skill-name">JavaScript</div>
-						<div class="skill-progress">
-							<div class="skill-progress-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-					<div class="skill-card" style="--skill-percentage: 92%;">
-						<div class="skill-percentage">92%</div>
-						<div class="skill-name">ReactJS</div>
-						<div class="skill-progress">
-							<div class="skill-progress-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-					<div class="skill-card" style="--skill-percentage: 90%;">
-						<div class="skill-percentage">90%</div>
-						<div class="skill-name">Laravel</div>
-						<div class="skill-progress">
-							<div class="skill-progress-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-					<div class="skill-card" style="--skill-percentage: 88%;">
-						<div class="skill-percentage">88%</div>
-						<div class="skill-name">WordPress</div>
-						<div class="skill-progress">
-							<div class="skill-progress-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-					<div class="skill-card" style="--skill-percentage: 85%;">
-						<div class="skill-percentage">85%</div>
-						<div class="skill-name">SQL/NoSQL</div>
-						<div class="skill-progress">
-							<div class="skill-progress-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-					<div class="skill-card" style="--skill-percentage: 80%;">
-						<div class="skill-percentage">80%</div>
-						<div class="skill-name">PostgreSQL</div>
-						<div class="skill-progress">
-							<div class="skill-progress-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-					<div class="skill-card" style="--skill-percentage: 85%;">
-						<div class="skill-percentage">85%</div>
-						<div class="skill-name">Git/GitHub</div>
-						<div class="skill-progress">
-							<div class="skill-progress-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-					<div class="skill-card" style="--skill-percentage: 75%;">
-						<div class="skill-percentage">75%</div>
-						<div class="skill-name">Docker</div>
-						<div class="skill-progress">
-							<div class="skill-progress-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-					<div class="skill-card" style="--skill-percentage: 90%;">
-						<div class="skill-percentage">90%</div>
-						<div class="skill-name">VS Code</div>
-						<div class="skill-progress">
-							<div class="skill-progress-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-					<div class="skill-card" style="--skill-percentage: 78%;">
-						<div class="skill-percentage">78%</div>
-						<div class="skill-name">Linux</div>
-						<div class="skill-progress">
-							<div class="skill-progress-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-					<div class="skill-card" style="--skill-percentage: 80%;">
-						<div class="skill-percentage">80%</div>
-						<div class="skill-name">SEO & Publicité</div>
-						<div class="skill-progress">
-							<div class="skill-progress-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-					<div class="skill-card" style="--skill-percentage: 80%;">
-						<div class="skill-percentage">80%</div>
-						<div class="skill-name">Montage Vidéo</div>
-						<div class="skill-progress">
-							<div class="skill-progress-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-					<div class="skill-card" style="--skill-percentage: 85%;">
-						<div class="skill-percentage">85%</div>
-						<div class="skill-name">Agile & Teamwork</div>
-						<div class="skill-progress">
-							<div class="skill-progress-bar"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Bootstrap JS -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="js/main.js"></script>
-
-
-</body>
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

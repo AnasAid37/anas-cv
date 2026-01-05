@@ -17,30 +17,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <style>
-      /* الفيديو كخلفية */
-      #myVideo {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover; /* يخليه يعمر الشاشة بلا تشويه */
-        z-index: -2;
-        filter: brightness(0.6); /* نقص الإضاءة */
-      }
-
-      /* طبقة غامقة خفيفة فوق الفيديو */
-      .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.25);
-        z-index: -1;
-      }
-    </style>
   </head>
 
   <body>
@@ -198,20 +174,149 @@
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <div class="timeline">
+              <div class="timeline-item">
+                <h3 class="text-info">2025</h3>
+                <h4 class="text-warning">
+                  ⭐ Développeur Full-Stack — SmartTrip AI
+                </h4>
+                <h5 class="text-muted">
+                  Projet Personnel | Application Web Moderne
+                </h5>
+                <p>
+                  Développement d'une
+                  <strong>application web complète et moderne</strong> de
+                  recommandations de voyages intelligentes avec interface
+                  multilingue.
+                </p>
+                <p>
+                  <strong>Architecture & Backend :</strong>
+                </p>
+                <ul>
+                  <li>
+                    <strong>API REST complète :</strong> authentification JWT,
+                    gestion des sessions, routes protégées, middlewares
+                    personnalisés
+                  </li>
+                  <li>
+                    <strong>Base de données :</strong> PostgreSQL avec relations
+                    complexes, migrations, seeders
+                  </li>
+                  <li>
+                    <strong>Moteur de recommandations intelligent :</strong>
+                    système de règles basé sur les préférences utilisateur
+                    (budget, style de voyage, activités)
+                  </li>
+                  <li>
+                    <strong>Architecture propre :</strong> services,
+                    repositories, validation des données, gestion des erreurs
+                  </li>
+                </ul>
+                <p>
+                  <strong>Frontend & UI/UX :</strong>
+                </p>
+                <ul>
+                  <li>
+                    <strong>Interface multilingue :</strong> support EN/FR/AR
+                    avec détection automatique, gestion RTL pour l'arabe
+                  </li>
+                  <li>
+                    <strong>Système de préférences :</strong> questionnaire
+                    interactif multi-étapes avec animations fluides
+                  </li>
+                  <li>
+                    <strong>Gestion des destinations :</strong> filtres avancés,
+                    recherche temps réel, cartes interactives, galeries d'images
+                  </li>
+                  <li>
+                    <strong>Dashboard utilisateur :</strong> CRUD complet des
+                    voyages, statistiques visuelles, historique
+                  </li>
+                  <li>
+                    <strong>Design moderne :</strong> dark mode, animations CSS,
+                    responsive mobile-first, UI élégante
+                  </li>
+                </ul>
+                <p>
+                  <strong>Architecture Frontend :</strong>
+                </p>
+                <ul>
+                  <li>Context API pour état global (auth, langue, thème)</li>
+                  <li>
+                    Hooks personnalisés réutilisables (useAuth, useLanguage,
+                    usePreferences)
+                  </li>
+                  <li>Services API modulaires avec intercepteurs Axios</li>
+                  <li>Composants React réutilisables et optimisés</li>
+                  <li>Build optimisé avec Vite (HMR, code splitting)</li>
+                </ul>
+                <p>
+                  <strong>Objectif :</strong> Construire un MVP professionnel
+                  d'un produit web scalable, démontrant la maîtrise complète du
+                  stack moderne Laravel + React.
+                </p>
+                <div>
+                  <span class="badge-tech">Laravel 11</span>
+                  <span class="badge-tech">React.js</span>
+                  <span class="badge-tech">Vite</span>
+                  <span class="badge-tech">PostgreSQL</span>
+                  <span class="badge-tech">API REST</span>
+                  <span class="badge-tech">JWT</span>
+                  <span class="badge-tech">i18n (EN/FR/AR)</span>
+                  <span class="badge-tech">Context API</span>
+                  <span class="badge-tech">Axios</span>
+                  <span class="badge-tech">CSS3 Animations</span>
+                  <span class="badge-tech">Responsive Design</span>
+                </div>
+              </div>
               <!-- Projet 1 -->
               <div class="timeline-item">
                 <h3 class="text-info">2025</h3>
-                <h4 class="text-warning">Développeur Web — Gestion de Stock</h4>
-                <h5 class="text-muted">
-                  Pneumatique Aqabli, Ourika, Marrakech
-                </h5>
+                <h4 class="text-warning">
+                  Développeur Full-Stack — Système de Gestion Stock & Crédits
+                </h4>
+                <h5 class="text-muted">Projet Freelance | Casablanca, Maroc</h5>
                 <p>
-                  Développement d'une application web de
-                  <strong>gestion de stock de pneus</strong> (PHP + MySQL).
-                  Fonctionnalités : gestion des produits, suivi des sorties,
-                  alertes de stock faible, tableau de bord avec indicateurs
-                  visuels, gestion des rôles utilisateurs.
+                  Développement d'une
+                  <strong>plateforme web complète</strong> de gestion
+                  commerciale intégrant trois modules :
                 </p>
+                <ul>
+                  <li>
+                    <strong>Gestion de stock :</strong> suivi en temps réel,
+                    alertes automatiques pour stocks faibles, historique complet
+                    des mouvements, import/export CSV
+                  </li>
+                  <li>
+                    <strong>Gestion des crédits clients :</strong> suivi précis
+                    des montants (total, payé, reste dû), paiements partiels ou
+                    complets, recherche avancée multi-critères, historique
+                    détaillé
+                  </li>
+                  <li>
+                    <strong>Sorties de stock :</strong> double mode de paiement
+                    (comptant/crédit), création automatique de crédit, liaison
+                    bidirectionnelle sorties ↔ crédits
+                  </li>
+                  <li>
+                    <strong>Système multi-utilisateurs :</strong> isolation
+                    complète des données, authentification sécurisée,
+                    abonnements (mensuel/à vie), panel administrateur
+                  </li>
+                </ul>
+                <p>
+                  <strong>Features clés :</strong> Interface responsive moderne,
+                  recherche AJAX temps réel, dashboard statistique interactif,
+                  notifications élégantes, export de rapports CSV
+                </p>
+                <div>
+                  <span class="badge-tech">Laravel 12</span>
+                  <span class="badge-tech">PHP 8.2</span>
+                  <span class="badge-tech">MySQL</span>
+                  <span class="badge-tech">Bootstrap 5</span>
+                  <span class="badge-tech">jQuery</span>
+                  <span class="badge-tech">AJAX</span>
+                  <span class="badge-tech">CSV Import/Export</span>
+                </div>
               </div>
 
               <!-- Projet 2 -->
@@ -451,14 +556,71 @@
         </div>
       </div>
     </section>
+    <section id="contact">
+      <h2 class="section-title">Me Contacter</h2>
+      <div class="contact-container">
+        <div class="contact-form">
+          <p>
+            N'hésitez pas à me contacter pour toute opportunité professionnelle,
+            collaboration ou simplement pour échanger des idées. Je suis
+            toujours ouvert à de nouvelles connexions et projets passionnants.
+          </p>
+        </div>
+        <div class="contact-details">
+          <div class="contact-detail-card">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h4>Téléphone</h4>
+              <p>+212 605 816 821</p>
+            </div>
+          </div>
 
-	<footer style="background-color: #000;">
-			  <div class="container text-center py-4">
-		<p class="mb-0 text-white">
-		  &copy; 2025 Anas Ait Daoud. Tous droits réservés.
-		</p>
-	  </div>
-	</footer>
+          <div class="contact-detail-card">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>Email</h4>
+              <p>anasdaitdaouf@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="contact-detail-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>Adresse</h4>
+              <p>Tahnaout – Derb Baghdad</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer style="background-color: #000">
+      <div class="container text-center py-4">
+        <div class="social-links mt-2 mb-3">
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=anasdaitdaouf@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ouvrir Gmail pour envoyer un email"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/anas-ait-daoud-02128a29b/"
+            target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="https://www.instagram.com/anas_ajd37/" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+        <p class="mb-0 text-white">
+          &copy; 2025 Anas Ait Daoud. Tous droits réservés.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,634 +1,329 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anas Ait Daoud - Portfolio</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anas Ait Daoud — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-  <body>
-    <video autoplay muted loop id="myVideo">
-      <source src="assets/rain.mp4" type="video/mp4" />
-    </video>
-    <div class="overlay"></div>
-    <!-- Animated Background -->
-    <div class="bg-animation"></div>
-    <div class="bg-particles" id="particles"></div>
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<div id="scroll-progress"></div>
+<div id="float-dots-container" aria-hidden="true"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="#home">Anas Ait Daoud</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#home"
-                ><i class="fas fa-home me-2"></i>Accueil</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#education"
-                ><i class="fas fa-graduation-cap me-2"></i>Formation</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#experience"
-                ><i class="fas fa-briefcase me-2"></i>Expérience</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#skills"
-                ><i class="fas fa-tools me-2"></i>Compétences</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact"
-                ><i class="fas fa-envelope me-2"></i>Contact</a
-              >
-            </li>
-          </ul>
-        </div>
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="#home">Anas<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#home">Accueil</a></li>
+    <li><a href="#education">Formation</a></li>
+    <li><a href="#experience">Expérience</a></li>
+    <li><a href="#skills">Compétences</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <!-- Parallax background words -->
+  <span class="parallax-word" id="pw1" style="left:-5%;top:10%;">DEV</span>
+  <span class="parallax-word" id="pw2" style="right:-5%;bottom:15%;">CODE</span>
+
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-tag">Full Stack Developer</div>
+      <h1 class="hero-name">
+        <div class="line"><span class="word">Anas</span></div>
+        <div class="line"><span class="word">Ait</span> <span class="word" style="animation-delay:.25s">Daoud</span></div>
+      </h1>
+      <p class="hero-role"><strong>Développeur Web Full Stack</strong> — PHP · React · Laravel</p>
+      <p class="hero-desc">
+        Développeur passionné, je transforme les idées en projets numériques concrets.
+        Je crée des applications web modernes avec <strong>PHP, JavaScript, ReactJS et Laravel</strong>,
+        combinant créativité, technique et entrepreneuriat.
+      </p>
+      <div class="hero-cta">
+        <a href="#experience" class="btn-primary-hero">Voir mes projets</a>
+        <a href="#contact" class="btn-outline-hero">Me contacter</a>
       </div>
-    </nav>
-
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
-      <div class="scroll-dot" data-target="#home"></div>
-      <div class="scroll-dot" data-target="#education"></div>
-      <div class="scroll-dot" data-target="#experience"></div>
-      <div class="scroll-dot" data-target="#skills"></div>
+      <div class="hero-socials" style="margin-top:32px">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anasdaitdaouf@gmail.com" target="_blank" class="social-btn"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/anas-ait-daoud-02128a29b/" target="_blank" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/anasaid37" target="_blank" class="social-btn"><i class="fab fa-github"></i></a>
+      </div>
     </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="section hero-section">
-      <div class="container">
-        <div class="row justify-content-center text-center">
-          <div class="col-lg-8">
-            <div class="profile-image">
-              <img src="images/profile_img.jpeg" alt="Anas Ait Daoud" />
-            </div>
-            <h1 class="hero-title"></h1>
-            <p class="hero-subtitle">Développeur Web Full Stack</p>
-            <p class="lead mb-4">
-              Développeur web full stack ambitieux et passionné, je transforme
-              les idées en projets numériques concrets. Avec une solide maîtrise
-              de <strong>PHP, JavaScript, ReactJS et Laravel</strong>, je crée
-              des sites WordPress sur mesure, gère efficacement des bases de
-              données <strong>SQL/NoSQL</strong> et conçois des contenus vidéo
-              motivants pour inspirer et impacter. Mon objectif est de bâtir des
-              solutions innovantes tout en développant ma carrière en ligne, en
-              combinant créativité, technique et entrepreneuriat.
-            </p>
-
-            <div class="contact-card">
-              <div class="row">
-                <div class="col-md-4 mb-3">
-                  <i class="fas fa-phone text-info me-2"></i>
-                  <strong>+212 605 816 821</strong>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <i class="fas fa-map-marker-alt text-danger me-2"></i>
-                  <strong>Tahanaout, rue baghdad</strong>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <i class="fas fa-language text-warning me-2"></i>
-                  <strong>AR | FR | EN | AMZ</strong>
-                </div>
-              </div>
-            </div>
-
-            <div class="social-links mt-4">
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=anasdaitdaouf@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Ouvrir Gmail pour envoyer un email"
-              >
-                <i class="fas fa-envelope"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/anas-ait-daoud-02128a29b/"
-                ><i class="fab fa-linkedin"></i
-              ></a>
-              <a href="https://github.com/anasaid37"
-                ><i class="fab fa-github"></i
-              ></a>
-            </div>
-          </div>
+    <div class="hero-visual">
+      <div class="avatar-wrap">
+        <div class="avatar-ring"></div>
+        <div class="avatar-img">
+          <div class="avatar-placeholder"><img src="images/profile_img.jpeg"></img></div>
         </div>
       </div>
-    </section>
+      <div class="hero-info-pills">
+        <div class="info-pill"><i class="fas fa-phone"></i><span>+212 605 816 821</span></div>
+        <div class="info-pill"><i class="fas fa-map-marker-alt"></i><span>Tahanaout, Marrakech</span></div>
+        <div class="info-pill"><i class="fas fa-language"></i><span>AR &nbsp;|&nbsp; FR &nbsp;|&nbsp; EN &nbsp;|&nbsp; AMZ</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Education Section -->
-    <section id="education" class="section">
-      <div class="container">
-        <h2 class="section-title">Formation</h2>
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div class="timeline">
-              <div class="timeline-item">
-                <h3 class="text-info">2023 - 2025</h3>
-                <h4 class="text-warning">ISTA NTIC SYBA – MARRAKECH</h4>
-                <p class="mb-0">
-                  Diplôme de Technicien Spécialisé en Développement Digital
-                  (Full Stack Web)
-                </p>
-              </div>
-              <div class="timeline-item">
-                <h3 class="text-info">2022 - 2023</h3>
-                <h4 class="text-warning">
-                  UNIVERSITÉ CADI AYYAD – FACULTÉ DES SCIENCES SEMLALIA
-                </h4>
-                <p class="mb-0">Études universitaires, Marrakech</p>
-              </div>
-              <div class="timeline-item">
-                <h3 class="text-info">2022</h3>
-                <h4 class="text-warning">Baccalauréat – Sciences</h4>
-                <p class="mb-0">Diplôme obtenu dans la filière Sciences</p>
-              </div>
-            </div>
-          </div>
+<div class="divider"></div>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="education-inner">
+    <p class="section-label reveal">Formation</p>
+    <h2 class="section-title reveal">Mon <em>parcours</em><br>académique</h2>
+    <div class="edu-grid">
+      <div class="edu-card reveal-clip-left d1">
+        <div class="edu-year">2023 — 2025</div>
+        <div class="edu-school">ISTA NTIC SYBA — MARRAKECH</div>
+        <div class="edu-degree">Diplôme de Technicien Spécialisé en Développement Digital (Full Stack Web)</div>
+      </div>
+      <div class="edu-card reveal-clip-right d2">
+        <div class="edu-year">2022 — 2023</div>
+        <div class="edu-school">UNIVERSITÉ CADI AYYAD — FACULTÉ DES SCIENCES SEMLALIA</div>
+        <div class="edu-degree">Études universitaires, Marrakech</div>
+      </div>
+      <div class="edu-card reveal-clip-left d3">
+        <div class="edu-year">2022</div>
+        <div class="edu-school">Baccalauréat — Sciences</div>
+        <div class="edu-degree">Diplôme obtenu dans la filière Sciences</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="exp-inner">
+    <p class="section-label reveal">Expérience</p>
+    <h2 class="section-title reveal">Projets &amp; <em>réalisations</em></h2>
+    <div class="exp-timeline">
+
+      <div class="exp-item reveal-clip-left">
+        <div class="exp-year">2025</div>
+        <div class="exp-star">⭐ Projet Phare</div>
+        <div class="exp-title">Développeur Full-Stack — SmartTrip AI</div>
+        <div class="exp-sub">Projet Personnel · Application Web Moderne</div>
+        <div class="exp-body">
+          <p>Application web complète de recommandations de voyages intelligentes avec interface multilingue EN/FR/AR.</p>
+          <ul>
+            <li>API REST complète : authentification JWT, routes protégées, middlewares personnalisés</li>
+            <li>Base de données PostgreSQL avec relations complexes, migrations, seeders</li>
+            <li>Moteur de recommandations basé sur les préférences utilisateur (budget, style, activités)</li>
+            <li>Interface multilingue avec détection automatique et gestion RTL pour l'arabe</li>
+            <li>Dashboard utilisateur : CRUD voyages, statistiques visuelles, historique</li>
+          </ul>
+        </div>
+        <div class="badge-wrap">
+          <span class="badge">Laravel 11</span><span class="badge">React.js</span>
+          <span class="badge">Vite</span><span class="badge">PostgreSQL</span>
+          <span class="badge">JWT</span><span class="badge">i18n</span>
+          <span class="badge">Context API</span><span class="badge">Axios</span>
         </div>
       </div>
-    </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-      <div class="container">
-        <h2 class="section-title">Expérience Professionnelle</h2>
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <div class="timeline">
-              <div class="timeline-item">
-                <h3 class="text-info">2025</h3>
-                <h4 class="text-warning">
-                  ⭐ Développeur Full-Stack — SmartTrip AI
-                </h4>
-                <h5 class="text-muted">
-                  Projet Personnel | Application Web Moderne
-                </h5>
-                <p>
-                  Développement d'une
-                  <strong>application web complète et moderne</strong> de
-                  recommandations de voyages intelligentes avec interface
-                  multilingue.
-                </p>
-                <p>
-                  <strong>Architecture & Backend :</strong>
-                </p>
-                <ul>
-                  <li>
-                    <strong>API REST complète :</strong> authentification JWT,
-                    gestion des sessions, routes protégées, middlewares
-                    personnalisés
-                  </li>
-                  <li>
-                    <strong>Base de données :</strong> PostgreSQL avec relations
-                    complexes, migrations, seeders
-                  </li>
-                  <li>
-                    <strong>Moteur de recommandations intelligent :</strong>
-                    système de règles basé sur les préférences utilisateur
-                    (budget, style de voyage, activités)
-                  </li>
-                  <li>
-                    <strong>Architecture propre :</strong> services,
-                    repositories, validation des données, gestion des erreurs
-                  </li>
-                </ul>
-                <p>
-                  <strong>Frontend & UI/UX :</strong>
-                </p>
-                <ul>
-                  <li>
-                    <strong>Interface multilingue :</strong> support EN/FR/AR
-                    avec détection automatique, gestion RTL pour l'arabe
-                  </li>
-                  <li>
-                    <strong>Système de préférences :</strong> questionnaire
-                    interactif multi-étapes avec animations fluides
-                  </li>
-                  <li>
-                    <strong>Gestion des destinations :</strong> filtres avancés,
-                    recherche temps réel, cartes interactives, galeries d'images
-                  </li>
-                  <li>
-                    <strong>Dashboard utilisateur :</strong> CRUD complet des
-                    voyages, statistiques visuelles, historique
-                  </li>
-                  <li>
-                    <strong>Design moderne :</strong> dark mode, animations CSS,
-                    responsive mobile-first, UI élégante
-                  </li>
-                </ul>
-                <p>
-                  <strong>Architecture Frontend :</strong>
-                </p>
-                <ul>
-                  <li>Context API pour état global (auth, langue, thème)</li>
-                  <li>
-                    Hooks personnalisés réutilisables (useAuth, useLanguage,
-                    usePreferences)
-                  </li>
-                  <li>Services API modulaires avec intercepteurs Axios</li>
-                  <li>Composants React réutilisables et optimisés</li>
-                  <li>Build optimisé avec Vite (HMR, code splitting)</li>
-                </ul>
-                <p>
-                  <strong>Objectif :</strong> Construire un MVP professionnel
-                  d'un produit web scalable, démontrant la maîtrise complète du
-                  stack moderne Laravel + React.
-                </p>
-                <div>
-                  <span class="badge-tech">Laravel 11</span>
-                  <span class="badge-tech">React.js</span>
-                  <span class="badge-tech">Vite</span>
-                  <span class="badge-tech">PostgreSQL</span>
-                  <span class="badge-tech">API REST</span>
-                  <span class="badge-tech">JWT</span>
-                  <span class="badge-tech">i18n (EN/FR/AR)</span>
-                  <span class="badge-tech">Context API</span>
-                  <span class="badge-tech">Axios</span>
-                  <span class="badge-tech">CSS3 Animations</span>
-                  <span class="badge-tech">Responsive Design</span>
-                </div>
-              </div>
-              <!-- Projet 1 -->
-              <div class="timeline-item">
-                <h3 class="text-info">2025</h3>
-                <h4 class="text-warning">
-                  Développeur Full-Stack — Système de Gestion Stock & Crédits
-                </h4>
-                <h5 class="text-muted">Projet Freelance | Casablanca, Maroc</h5>
-                <p>
-                  Développement d'une
-                  <strong>plateforme web complète</strong> de gestion
-                  commerciale intégrant trois modules :
-                </p>
-                <ul>
-                  <li>
-                    <strong>Gestion de stock :</strong> suivi en temps réel,
-                    alertes automatiques pour stocks faibles, historique complet
-                    des mouvements, import/export CSV
-                  </li>
-                  <li>
-                    <strong>Gestion des crédits clients :</strong> suivi précis
-                    des montants (total, payé, reste dû), paiements partiels ou
-                    complets, recherche avancée multi-critères, historique
-                    détaillé
-                  </li>
-                  <li>
-                    <strong>Sorties de stock :</strong> double mode de paiement
-                    (comptant/crédit), création automatique de crédit, liaison
-                    bidirectionnelle sorties ↔ crédits
-                  </li>
-                  <li>
-                    <strong>Système multi-utilisateurs :</strong> isolation
-                    complète des données, authentification sécurisée,
-                    abonnements (mensuel/à vie), panel administrateur
-                  </li>
-                </ul>
-                <p>
-                  <strong>Features clés :</strong> Interface responsive moderne,
-                  recherche AJAX temps réel, dashboard statistique interactif,
-                  notifications élégantes, export de rapports CSV
-                </p>
-                <div>
-                  <span class="badge-tech">Laravel 12</span>
-                  <span class="badge-tech">PHP 8.2</span>
-                  <span class="badge-tech">MySQL</span>
-                  <span class="badge-tech">Bootstrap 5</span>
-                  <span class="badge-tech">jQuery</span>
-                  <span class="badge-tech">AJAX</span>
-                  <span class="badge-tech">CSV Import/Export</span>
-                </div>
-              </div>
-
-              <!-- Projet 2 -->
-              <div class="timeline-item">
-                <h3 class="text-info">2025</h3>
-                <h4 class="text-warning">
-                  Développeur Web — Site officiel & Prise de RDV
-                </h4>
-                <h5 class="text-muted">
-                  Pneumatique Aqabli, Ourika, Marrakech
-                </h5>
-                <p>
-                  Conception et réalisation du
-                  <strong>site vitrine officiel</strong> de l’entreprise avec
-                  fonctionnalités avancées :
-                </p>
-                <ul class="mt-2">
-                  <li>
-                    Module de
-                    <strong>prise de rendez-vous en ligne</strong> pour les
-                    services
-                  </li>
-                  <li>
-                    Espace <strong>administrateur</strong> pour gérer les RDV et
-                    les commandes
-                  </li>
-                  <li>
-                    Gestion et affichage des
-                    <strong>produits proposés</strong> par l’entreprise
-                  </li>
-                </ul>
-                <p>Technologies : PHP, MySQL, HTML, CSS, JavaScript</p>
-              </div>
-
-              <!-- Projet 3 -->
-              <div class="timeline-item">
-                <h3 class="text-info">2025</h3>
-                <h4 class="text-warning">
-                  Développeur Web — Gestion des Crédits Clients
-                </h4>
-                <h5 class="text-muted">
-                  Pneumatique Aqabli, Ourika, Marrakech
-                </h5>
-                <p>
-                  Développement d'une application web de
-                  <strong>gestion des crédits clients</strong> (Laravel +
-                  MySQL). Fonctionnalités : gestion des clients, suivi des
-                  paiements, calcul automatique du reste à payer, historique
-                  détaillé.
-                </p>
-              </div>
-
-              <!-- Projet Food -->
-              <div class="timeline-item">
-                <h3 class="text-info">2024</h3>
-                <h4 class="text-warning">Projet Académique — Food Project</h4>
-                <p>
-                  Collaboration sur un projet de groupe pour concevoir une
-                  application de livraison de nourriture en ligne, un site
-                  dynamique utilisant <strong>React</strong> pour le front-end
-                  et <strong>Laravel</strong> pour le back-end.
-                </p>
-              </div>
-
-              <!-- Auto-entrepreneur -->
-              <div class="timeline-item">
-                <h3 class="text-info">2023 - Aujourd'hui</h3>
-                <h4 class="text-warning">
-                  Auto-entrepreneur — Activités numériques & e-commerce
-                </h4>
-                <p>Création et gestion de plusieurs projets web personnels :</p>
-                <ul class="mt-2">
-                  <li>
-                    Vente d'abonnements IPTV via un site WordPress personnalisé
-                    (<strong>FleetIPTV</strong>)
-                  </li>
-                  <li>
-                    Développement du site <strong>Tsyshoop</strong>, spécialisé
-                    dans l'affiliation de produits
-                  </li>
-                  <li>
-                    Projets variés avec <strong>Node.js</strong> et un
-                    mini-projet <strong>Odoo</strong> en Python
-                  </li>
-                  <li>
-                    Application de compétences en PHP, JavaScript, WordPress,
-                    Laravel, React
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+      <div class="exp-item reveal-clip-right">
+        <div class="exp-year">2025</div>
+        <div class="exp-title">Développeur Full-Stack — Système Gestion Stock &amp; Crédits</div>
+        <div class="exp-sub">Projet Freelance · Casablanca, Maroc</div>
+        <div class="exp-body">
+          <p>Plateforme web complète de gestion commerciale intégrant trois modules :</p>
+          <ul>
+            <li>Gestion de stock : suivi temps réel, alertes automatiques, import/export CSV</li>
+            <li>Gestion des crédits clients : suivi montants, paiements partiels, historique détaillé</li>
+            <li>Système multi-utilisateurs avec abonnements et panel administrateur</li>
+          </ul>
+        </div>
+        <div class="badge-wrap">
+          <span class="badge">Laravel 12</span><span class="badge">PHP 8.2</span>
+          <span class="badge">MySQL</span><span class="badge">Bootstrap 5</span>
+          <span class="badge">jQuery</span><span class="badge">AJAX</span>
         </div>
       </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-      <div class="container">
-        <h2 class="section-title">Compétences Techniques</h2>
-        <div class="row">
-          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="skill-card" style="--skill-percentage: 95%">
-              <div class="skill-percentage">95%</div>
-              <div class="skill-name">HTML/CSS</div>
-              <div class="skill-progress">
-                <div class="skill-progress-bar"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="skill-card" style="--skill-percentage: 95%">
-              <div class="skill-percentage">95%</div>
-              <div class="skill-name">PHP</div>
-              <div class="skill-progress">
-                <div class="skill-progress-bar"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="skill-card" style="--skill-percentage: 93%">
-              <div class="skill-percentage">93%</div>
-              <div class="skill-name">JavaScript</div>
-              <div class="skill-progress">
-                <div class="skill-progress-bar"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="skill-card" style="--skill-percentage: 92%">
-              <div class="skill-percentage">92%</div>
-              <div class="skill-name">ReactJS</div>
-              <div class="skill-progress">
-                <div class="skill-progress-bar"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="skill-card" style="--skill-percentage: 90%">
-              <div class="skill-percentage">90%</div>
-              <div class="skill-name">Laravel</div>
-              <div class="skill-progress">
-                <div class="skill-progress-bar"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="skill-card" style="--skill-percentage: 88%">
-              <div class="skill-percentage">88%</div>
-              <div class="skill-name">WordPress</div>
-              <div class="skill-progress">
-                <div class="skill-progress-bar"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="skill-card" style="--skill-percentage: 85%">
-              <div class="skill-percentage">85%</div>
-              <div class="skill-name">SQL/NoSQL</div>
-              <div class="skill-progress">
-                <div class="skill-progress-bar"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="skill-card" style="--skill-percentage: 80%">
-              <div class="skill-percentage">80%</div>
-              <div class="skill-name">PostgreSQL</div>
-              <div class="skill-progress">
-                <div class="skill-progress-bar"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="skill-card" style="--skill-percentage: 85%">
-              <div class="skill-percentage">85%</div>
-              <div class="skill-name">Git/GitHub</div>
-              <div class="skill-progress">
-                <div class="skill-progress-bar"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="skill-card" style="--skill-percentage: 75%">
-              <div class="skill-percentage">75%</div>
-              <div class="skill-name">Docker</div>
-              <div class="skill-progress">
-                <div class="skill-progress-bar"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="skill-card" style="--skill-percentage: 90%">
-              <div class="skill-percentage">90%</div>
-              <div class="skill-name">VS Code</div>
-              <div class="skill-progress">
-                <div class="skill-progress-bar"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="skill-card" style="--skill-percentage: 78%">
-              <div class="skill-percentage">78%</div>
-              <div class="skill-name">Linux</div>
-              <div class="skill-progress">
-                <div class="skill-progress-bar"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="skill-card" style="--skill-percentage: 80%">
-              <div class="skill-percentage">80%</div>
-              <div class="skill-name">SEO & Publicité</div>
-              <div class="skill-progress">
-                <div class="skill-progress-bar"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="skill-card" style="--skill-percentage: 80%">
-              <div class="skill-percentage">80%</div>
-              <div class="skill-name">Montage Vidéo</div>
-              <div class="skill-progress">
-                <div class="skill-progress-bar"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="skill-card" style="--skill-percentage: 85%">
-              <div class="skill-percentage">85%</div>
-              <div class="skill-name">Agile & Teamwork</div>
-              <div class="skill-progress">
-                <div class="skill-progress-bar"></div>
-              </div>
-            </div>
-          </div>
+      <div class="exp-item reveal-clip-left">
+        <div class="exp-year">2025</div>
+        <div class="exp-title">Développeur Web — Site officiel &amp; Prise de RDV</div>
+        <div class="exp-sub">Pneumatique Aqabli · Ourika, Marrakech</div>
+        <div class="exp-body">
+          <ul>
+            <li>Site vitrine officiel avec module de prise de rendez-vous en ligne</li>
+            <li>Espace administrateur pour gérer les RDV et les commandes</li>
+            <li>Gestion et affichage des produits proposés par l'entreprise</li>
+          </ul>
+        </div>
+        <div class="badge-wrap">
+          <span class="badge">PHP</span><span class="badge">MySQL</span>
+          <span class="badge">HTML/CSS</span><span class="badge">JavaScript</span>
         </div>
       </div>
-    </section>
-    <section id="contact">
-      <h2 class="section-title">Me Contacter</h2>
-      <div class="contact-container">
-        <div class="contact-form">
-          <p>
-            N'hésitez pas à me contacter pour toute opportunité professionnelle,
-            collaboration ou simplement pour échanger des idées. Je suis
-            toujours ouvert à de nouvelles connexions et projets passionnants.
-          </p>
+
+      <div class="exp-item reveal-clip-right">
+        <div class="exp-year">2024</div>
+        <div class="exp-title">Projet Académique — Food Project</div>
+        <div class="exp-sub">Projet de groupe · ISTA NTIC SYBA</div>
+        <div class="exp-body">
+          <p>Application de livraison de nourriture en ligne — site dynamique avec React (front-end) et Laravel (back-end).</p>
         </div>
-        <div class="contact-details">
-          <div class="contact-detail-card">
-            <i class="fas fa-phone"></i>
-            <div>
-              <h4>Téléphone</h4>
-              <p>+212 605 816 821</p>
-            </div>
-          </div>
+        <div class="badge-wrap"><span class="badge">React</span><span class="badge">Laravel</span></div>
+      </div>
 
-          <div class="contact-detail-card">
-            <i class="fas fa-envelope"></i>
-            <div>
-              <h4>Email</h4>
-              <p>anasdaitdaouf@gmail.com</p>
-            </div>
-          </div>
-
-          <div class="contact-detail-card">
-            <i class="fas fa-map-marker-alt"></i>
-            <div>
-              <h4>Adresse</h4>
-              <p>Tahnaout – Derb Baghdad</p>
-            </div>
-          </div>
+      <div class="exp-item reveal-clip-left">
+        <div class="exp-year">2023 — Aujourd'hui</div>
+        <div class="exp-title">Auto-entrepreneur — Activités numériques &amp; e-commerce</div>
+        <div class="exp-sub">Projets personnels · Maroc</div>
+        <div class="exp-body">
+          <ul>
+            <li>FleetIPTV — vente d'abonnements IPTV via site WordPress personnalisé</li>
+            <li>Tsyshoop — site spécialisé dans l'affiliation de produits</li>
+            <li>Projets variés avec Node.js et mini-projet Odoo en Python</li>
+          </ul>
+        </div>
+        <div class="badge-wrap">
+          <span class="badge">WordPress</span><span class="badge">Node.js</span>
+          <span class="badge">Python</span><span class="badge">SEO</span>
         </div>
       </div>
-    </section>
 
-    <footer style="background-color: #000">
-      <div class="container text-center py-4">
-        <div class="social-links mt-2 mb-3">
-          <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=anasdaitdaouf@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Ouvrir Gmail pour envoyer un email"
-          >
-            <i class="fas fa-envelope"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/anas-ait-daoud-02128a29b/"
-            target="_blank"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-          <a href="https://www.instagram.com/anas_ajd37/" target="_blank"
-            ><i class="fab fa-instagram"></i
-          ></a>
-        </div>
-        <p class="mb-0 text-white">
-          &copy; 2025 Anas Ait Daoud. Tous droits réservés.
-        </p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="skills-inner">
+    <p class="section-label reveal">Compétences</p>
+    <h2 class="section-title reveal">Stack <em>technique</em></h2>
+
+    <div class="skills-grid">
+      <!-- Row 1: col 1&2 من اليسار, col 3&4 من اليمين -->
+      <div class="skill-card reveal-clip-left d1" data-pct="95">
+        <div class="skill-pct">95%</div><div class="skill-name">HTML / CSS</div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
       </div>
-    </footer>
+      <div class="skill-card reveal-clip-left d2" data-pct="95">
+        <div class="skill-pct">95%</div><div class="skill-name">PHP</div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+      </div>
+      <div class="skill-card reveal-clip-right d3" data-pct="93">
+        <div class="skill-pct">93%</div><div class="skill-name">JavaScript</div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+      </div>
+      <div class="skill-card reveal-clip-right d4" data-pct="92">
+        <div class="skill-pct">92%</div><div class="skill-name">ReactJS</div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+      </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+      <!-- Row 2 -->
+      <div class="skill-card reveal-clip-left d1" data-pct="90">
+        <div class="skill-pct">90%</div><div class="skill-name">Laravel</div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+      </div>
+      <div class="skill-card reveal-clip-left d2" data-pct="88">
+        <div class="skill-pct">88%</div><div class="skill-name">WordPress</div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+      </div>
+      <div class="skill-card reveal-clip-right d3" data-pct="85">
+        <div class="skill-pct">85%</div><div class="skill-name">SQL / NoSQL</div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+      </div>
+      <div class="skill-card reveal-clip-right d4" data-pct="80">
+        <div class="skill-pct">80%</div><div class="skill-name">PostgreSQL</div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+      </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+      <!-- Row 3 -->
+      <div class="skill-card reveal-clip-left d1" data-pct="85">
+        <div class="skill-pct">85%</div><div class="skill-name">Git / GitHub</div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+      </div>
+      <div class="skill-card reveal-clip-left d2" data-pct="75">
+        <div class="skill-pct">75%</div><div class="skill-name">Docker</div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+      </div>
+      <div class="skill-card reveal-clip-right d3" data-pct="90">
+        <div class="skill-pct">90%</div><div class="skill-name">VS Code</div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+      </div>
+      <div class="skill-card reveal-clip-right d4" data-pct="78">
+        <div class="skill-pct">78%</div><div class="skill-name">Linux</div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+      </div>
+
+      <!-- Row 4 (3 cards centered) -->
+      <div class="skill-card reveal-clip-left d1" data-pct="80">
+        <div class="skill-pct">80%</div><div class="skill-name">SEO &amp; Publicité</div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+      </div>
+      <div class="skill-card reveal-clip-left d2" data-pct="80">
+        <div class="skill-pct">80%</div><div class="skill-name">Montage Vidéo</div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+      </div>
+      <div class="skill-card reveal-clip-right d3" data-pct="85">
+        <div class="skill-pct">85%</div><div class="skill-name">Agile &amp; Teamwork</div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <p class="section-label reveal">Contact</p>
+      <h2 class="section-title reveal" style="margin-bottom:24px">Travaillons<br><em>ensemble</em></h2>
+      <p class="contact-big-text reveal">
+        N'hésitez pas à me contacter pour toute <strong>opportunité professionnelle</strong>,
+        collaboration ou simplement pour échanger des idées.
+        Je suis toujours ouvert à de nouveaux projets passionnants.
+      </p>
+      <div class="contact-socials reveal">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anasdaitdaouf@gmail.com" target="_blank" class="social-btn"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/anas-ait-daoud-02128a29b/" target="_blank" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/anasaid37" target="_blank" class="social-btn"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/anas_ajd37/" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="contact-cards">
+      <div class="contact-card-item reveal-right d1">
+        <div class="cc-icon"><i class="fas fa-phone"></i></div>
+        <div><div class="cc-label">Téléphone</div><div class="cc-value">+212 605 816 821</div></div>
+      </div>
+      <div class="contact-card-item reveal-right d2">
+        <div class="cc-icon"><i class="fas fa-envelope"></i></div>
+        <div><div class="cc-label">Email</div><div class="cc-value">anasdaitdaouf@gmail.com</div></div>
+      </div>
+      <div class="contact-card-item reveal-right d3">
+        <div class="cc-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div><div class="cc-label">Adresse</div><div class="cc-value">Tahanaout — Derb Baghdad, Marrakech</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Anas Ait Daoud — Tous droits réservés.</span>
+  <span>Built with <span style="color:var(--accent1)">♥</span> &amp; passion</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
 </html>

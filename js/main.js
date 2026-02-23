@@ -1,227 +1,95 @@
+ /* ── CURSOR ── */
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursor-ring');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+  });
+  function animRing() {
+    rx += (mx - rx) * .12; ry += (my - ry) * .12;
+    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+    requestAnimationFrame(animRing);
+  }
+  animRing();
+  document.querySelectorAll('a, button, .skill-card, .edu-card, .contact-card-item').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.width = '24px'; cursor.style.height = '24px';
+      ring.style.width = '60px'; ring.style.height = '60px';
+      ring.style.borderColor = 'rgba(0,229,255,.5)';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.width = '12px'; cursor.style.height = '12px';
+      ring.style.width = '40px'; ring.style.height = '40px';
+      ring.style.borderColor = 'rgba(255,45,107,.4)';
+    });
+  });
 
-// Create floating particles
-function createParticles() {
-	const particleContainer = document.getElementById('particles');
-	const particleCount = 50;
+  /* ── SCROLL PROGRESS ── */
+  const prog = document.getElementById('scroll-progress');
 
-	for (let i = 0; i < particleCount; i++) {
-		const particle = document.createElement('div');
-		particle.className = 'particle';
+  /* ── NAV ── */
+  const nav = document.getElementById('navbar');
 
-		// Random size and position
-		const size = Math.random() * 4 + 1;
-		particle.style.width = size + 'px';
-		particle.style.height = size + 'px';
-		particle.style.left = Math.random() * 100 + '%';
-		particle.style.animationDuration = (Math.random() * 20 + 10) + 's';
-		particle.style.animationDelay = Math.random() * 20 + 's';
+  /* ── PARALLAX ── */
+  const pw1 = document.getElementById('pw1');
+  const pw2 = document.getElementById('pw2');
 
-		particleContainer.appendChild(particle);
-	}
-}
+  window.addEventListener('scroll', () => {
+    const sy = window.scrollY;
+    const pct = (sy / (document.body.scrollHeight - window.innerHeight)) * 100;
+    prog.style.width = pct + '%';
+    nav.classList.toggle('scrolled', sy > 60);
 
-// Intersection Observer for scroll animations
-const observerOptions = {
-	threshold: 0.1,
-	rootMargin: '0px 0px -100px 0px'
-};
+    /* Parallax: كل word يتحرك بسرعة مختلفة */
+    if (pw1) pw1.style.transform = `translateY(${sy * 0.4}px) translateX(${sy * -0.05}px)`;
+    if (pw2) pw2.style.transform = `translateY(${sy * -0.3}px) translateX(${sy * 0.05}px)`;
+  });
 
-const observer = new IntersectionObserver((entries) => {
-	entries.forEach(entry => {
-		if (entry.isIntersecting) {
-			entry.target.classList.add('visible');
+  /* ── SCROLL REVEAL ── */
+  const revealEls = document.querySelectorAll(
+    '.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-clip-left, .reveal-clip-right'
+  );
 
-			// Trigger skill cards animation with stagger
-			if (entry.target.id === 'skills') {
-				const skillCards = entry.target.querySelectorAll('.skill-card');
-				skillCards.forEach((card, index) => {
-					setTimeout(() => {
-						card.classList.add('visible');
-					}, index * 100);
-				});
-			}
-
-			// Trigger timeline items animation with stagger
-			if (entry.target.classList.contains('section')) {
-				const timelineItems = entry.target.querySelectorAll('.timeline-item');
-				timelineItems.forEach((item, index) => {
-					setTimeout(() => {
-						item.classList.add('visible');
-					}, index * 200);
-				});
-			}
-		}
-	});
-}, observerOptions);
-
-// Observe all sections
-document.querySelectorAll('.section').forEach(section => {
-	observer.observe(section);
-});
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-	anchor.addEventListener('click', function (e) {
-		e.preventDefault();
-		const target = document.querySelector(this.getAttribute('href'));
-		if (target) {
-			target.scrollIntoView({
-				behavior: 'smooth',
-				block: 'start'
-			});
-		}
-	});
-});
-
-// Update scroll indicator
-function updateScrollIndicator() {
-	const sections = document.querySelectorAll('.section');
-	const scrollDots = document.querySelectorAll('.scroll-dot');
-
-	let current = '';
-	sections.forEach(section => {
-		const sectionTop = section.offsetTop;
-		const sectionHeight = section.clientHeight;
-		if (window.scrollY >= sectionTop - 200) {
-			current = section.getAttribute('id');
-		}
-	});
-
-	scrollDots.forEach(dot => {
-		dot.classList.remove('active');
-		if (dot.getAttribute('data-target') === '#' + current) {
-			dot.classList.add('active');
-		}
-	});
-}
-
-// Scroll indicator click handlers
-document.querySelectorAll('.scroll-dot').forEach(dot => {
-	dot.addEventListener('click', function () {
-		const target = document.querySelector(this.getAttribute('data-target'));
-		if (target) {
-			target.scrollIntoView({
-				behavior: 'smooth',
-				block: 'start'
-			});
-		}
-	});
-});
-
-// Navbar background on scroll
-function handleNavbar() {
-	const navbar = document.querySelector('.navbar-custom');
-	if (window.scrollY > 100) {
-		navbar.style.background = 'rgba(0, 0, 0, 0.95)';
-	} else {
-		navbar.style.background = 'rgba(0, 0, 0, 0.9)';
-	}
-}
-
-// Event listeners
-window.addEventListener('scroll', () => {
-	updateScrollIndicator();
-	handleNavbar();
-});
-
-// Initialize
-document.addEventListener('DOMContentLoaded', function () {
-	createParticles();
-	// Make first section visible immediately
-	document.querySelector('#home').classList.add('visible');
-	updateScrollIndicator();
-});
-
-// Add typing effect to hero title
-function typeWriter(element, text, speed = 100) {
-	let i = 0;
-	element.innerHTML = '';
-	function type() {
-		if (i < text.length) {
-			element.innerHTML += text.charAt(i);
-			i++;
-			setTimeout(type, speed);
-		}
-	}
-	type();
-}
-
-window.addEventListener('load', () => {
-    const heroTitle = document.querySelector('.hero-title');
-    const texts = ['Anas AIT DAOUD', 'Future Millionaire'];
-    let textIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    
-    function typeEffect() {
-        const currentText = texts[textIndex];
-        
-        if (isDeleting) {
-            // حذف الحروف
-            heroTitle.textContent = currentText.substring(0, charIndex - 1);
-            charIndex--;
-        } else {
-            // كتابة الحروف
-            heroTitle.textContent = currentText.substring(0, charIndex + 1);
-            charIndex++;
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('active');
+        /* Animate skill bars */
+        const bar = e.target.querySelector('.skill-bar-fill');
+        if (bar) {
+          const pct = e.target.dataset.pct;
+          setTimeout(() => { bar.style.width = pct + '%'; }, 300);
         }
-        
-        let typeSpeed = 100;
-        
-        if (isDeleting) {
-            typeSpeed = 50;
-        }
-        
-		if (!isDeleting && charIndex === currentText.length) {
-            typeSpeed = 1000; // انتظر ثانيتين قبل البدء بالحذف
-            isDeleting = true;
-        } 
-        else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            textIndex = (textIndex + 1) % texts.length; 
-            typeSpeed = 500;
-        }
-        
-        setTimeout(typeEffect, typeSpeed);
-    }
-    
-    typeEffect();
-});
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-// Add parallax effect to background
-window.addEventListener('scroll', () => {
-	const scrolled = window.pageYOffset;
-	const bgAnimation = document.querySelector('.bg-animation');
-	bgAnimation.style.transform = `translateY(${scrolled * 0.5}px)`;
-});
+  revealEls.forEach(el => obs.observe(el));
 
-// Add mouse follow effect
-document.addEventListener('mousemove', (e) => {
-	const cursor = document.createElement('div');
-	cursor.style.position = 'fixed';
-	cursor.style.left = e.clientX + 'px';
-	cursor.style.top = e.clientY + 'px';
-	cursor.style.width = '10px';
-	cursor.style.height = '10px';
-	cursor.style.background = 'rgba(255, 0, 110, 0.3)';
-	cursor.style.borderRadius = '50%';
-	cursor.style.pointerEvents = 'none';
-	cursor.style.zIndex = '9999';
-	cursor.style.animation = 'fadeOut 1s forwards';
+  /* ── FLOATING DOTS ── */
+  const container = document.getElementById('float-dots-container');
+  container.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;';
+  for (let i = 0; i < 30; i++) {
+    const dot = document.createElement('div');
+    const size = Math.random() * 3 + 1;
+    const colors = ['rgba(255,45,107,.3)', 'rgba(0,229,255,.2)', 'rgba(255,224,51,.15)'];
+    dot.style.cssText = `
+      position:absolute;border-radius:50%;
+      width:${size}px;height:${size}px;
+      background:${colors[Math.floor(Math.random()*3)]};
+      left:${Math.random()*100}%;
+      bottom:-10px;
+      animation:floatAnim ${15+Math.random()*20}s ${Math.random()*15}s linear infinite;
+    `;
+    container.appendChild(dot);
+  }
 
-	document.body.appendChild(cursor);
-
-	setTimeout(() => {
-		cursor.remove();
-	}, 1000);
-});
-
-// Add fadeOut animation for cursor effect
-const style = document.createElement('style');
-style.textContent = `
-            @keyframes fadeOut {
-                0% { opacity: 1; transform: scale(1); }
-                100% { opacity: 0; transform: scale(0); }
-            }
-        `;
-document.head.appendChild(style);
+  /* ── SMOOTH SCROLL ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });

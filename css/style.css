@@ -450,7 +450,6 @@ section {
   justify-content: center;
   color: var(--muted);
   font-size: 1rem;
-
 }
 .hero-info-pills {
   display: flex;
@@ -781,17 +780,6 @@ section {
     transform 0.9s 0.2s cubic-bezier(0.16, 1, 0.3, 1),
     border-color 0.4s,
     box-shadow 0.4s;
-}
-
-.project-card:hover {
-  border-color: rgba(255, 45, 107, 0.35);
-  box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255, 45, 107, 0.1);
-  transform: translateY(-6px) scale(1.01);
-}
-.project-card.active:hover {
-  transform: translateY(-6px) scale(1.01);
 }
 
 .project-visual {
@@ -1254,13 +1242,314 @@ section {
   transform-origin: left;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+.skill-icon-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-icon-wrap i {
+  font-size: 2.8rem;
+  opacity: 0;
+  transform: translateY(30px) scale(0.3) rotate(-20deg);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: drop-shadow(0 0 0px transparent);
+}
+
+/* Stagger multiple icons (e.g. HTML + CSS) */
+.skill-icon-wrap i:nth-child(1) {
+  transition-delay: 0s;
+}
+.skill-icon-wrap i:nth-child(2) {
+  transition-delay: 0.08s;
+}
+
+/* ── HOVER STATE ── */
+.skill-card:hover .skill-icon-wrap {
+  opacity: 1;
+}
+
+.skill-card:hover .skill-icon-wrap i {
+  opacity: 1;
+  transform: translateY(0) scale(1) rotate(0deg);
+  filter: drop-shadow(0 0 20px currentColor);
+}
+
+/* Hide text content on hover — smooth crossfade */
+.skill-card .skill-pct,
+.skill-card .skill-name,
+.skill-card .skill-bar-track {
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+}
+
+.skill-card:hover .skill-pct,
+.skill-card:hover .skill-name,
+.skill-card:hover .skill-bar-track {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* ── ICON COLORS PER TECHNOLOGY ── */
+
+/* HTML5 — orange */
+.skill-card:nth-child(1) .skill-icon-wrap i:nth-child(1) {
+  color: #e44d26;
+}
+/* CSS3 — blue */
+.skill-card:nth-child(1) .skill-icon-wrap i:nth-child(2) {
+  color: #264de4;
+}
+/* PHP — indigo */
+.skill-card:nth-child(2) .skill-icon-wrap i {
+  color: #777bb4;
+}
+/* JavaScript — yellow */
+.skill-card:nth-child(3) .skill-icon-wrap i {
+  color: #f7df1e;
+}
+/* ReactJS — cyan */
+.skill-card:nth-child(4) .skill-icon-wrap i {
+  color: #61dafb;
+}
+/* Laravel — red */
+.skill-card:nth-child(5) .skill-icon-wrap i {
+  color: #ff2d20;
+}
+/* WordPress — blue */
+.skill-card:nth-child(6) .skill-icon-wrap i {
+  color: #21759b;
+}
+/* SQL — cyan */
+.skill-card:nth-child(7) .skill-icon-wrap i {
+  color: var(--accent2);
+}
+/* PostgreSQL — blue */
+.skill-card:nth-child(8) .skill-icon-wrap i {
+  color: #336791;
+}
+/* Git — orange-red */
+.skill-card:nth-child(9) .skill-icon-wrap i {
+  color: #f05032;
+}
+/* Docker — blue */
+.skill-card:nth-child(10) .skill-icon-wrap i {
+  color: #2496ed;
+}
+/* VS Code — blue */
+.skill-card:nth-child(11) .skill-icon-wrap i {
+  color: #007acc;
+}
+/* Linux — yellow */
+.skill-card:nth-child(12) .skill-icon-wrap i {
+  color: #fcc624;
+}
+/* SEO — green */
+.skill-card:nth-child(13) .skill-icon-wrap i {
+  color: #10b981;
+}
+/* Montage Vidéo — accent1 */
+.skill-card:nth-child(14) .skill-icon-wrap i {
+  color: var(--accent1);
+}
+/* Agile — accent3 */
+.skill-card:nth-child(15) .skill-icon-wrap i {
+  color: var(--accent3);
+}
+
+/* ── REACT ICON SPIN ON HOVER ── */
+.skill-card:nth-child(4):hover .skill-icon-wrap i {
+  animation: reactSpin 3s linear infinite;
+}
+
+@keyframes reactSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── DOCKER ICON BOUNCE ON HOVER ── */
+.skill-card:nth-child(10):hover .skill-icon-wrap i {
+  animation: dockerBounce 1.5s ease infinite;
+}
+
+@keyframes dockerBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-4px);
+  }
+}
+
+/* ── GIT ICON PULSE ON HOVER ── */
+.skill-card:nth-child(9):hover .skill-icon-wrap i {
+  animation: gitPulse 1.2s ease infinite;
+}
+
+@keyframes gitPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 20px #f05032);
+  }
+  50% {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 35px #f05032);
+  }
+}
+
+/* ── LARAVEL ICON GLOW PULSE ── */
+.skill-card:nth-child(5):hover .skill-icon-wrap i {
+  animation: laravelGlow 2s ease infinite;
+}
+
+@keyframes laravelGlow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 15px rgba(255, 45, 32, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 40px rgba(255, 45, 32, 0.9));
+  }
+}
+
+/* ── JS ICON WOBBLE ── */
+.skill-card:nth-child(3):hover .skill-icon-wrap i {
+  animation: jsWobble 0.8s ease infinite;
+}
+
+@keyframes jsWobble {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
+/* ── LINUX PENGUIN TILT ── */
+.skill-card:nth-child(12):hover .skill-icon-wrap i {
+  animation: penguinTilt 1.5s ease infinite;
+}
+
+@keyframes penguinTilt {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg) scale(1.05);
+  }
+  75% {
+    transform: rotate(-10deg) scale(1.05);
+  }
+}
+
+/* ── BACKGROUND GLOW ON HOVER ── */
+.skill-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* Subtle background color shift on hover */
 .skill-card:hover {
-  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.02);
+}
+/* Next.js — white */
+.skill-card:nth-child(16) .skill-icon-wrap i {
+  color: #ffffff;
+}
+/* Prisma — teal */
+.skill-card:nth-child(17) .skill-icon-wrap i {
+  color: #2d3748;
+}
+body.light-mode .skill-card:nth-child(17) .skill-icon-wrap i {
+  color: #5a67d8;
+}
+/* Keycloak — orange */
+.skill-card:nth-child(18) .skill-icon-wrap i {
+  color: #eb8e27;
+}
+
+/* Next.js icon — subtle float */
+.skill-card:nth-child(16):hover .skill-icon-wrap i {
+  animation: nextFloat 2s ease infinite;
+}
+@keyframes nextFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Keycloak icon — key turn */
+.skill-card:nth-child(18):hover .skill-icon-wrap i {
+  animation: keyTurn 1.5s ease infinite;
+}
+@keyframes keyTurn {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(25deg) scale(1.1);
+  }
+}
+.project-card:hover {
+  border-color: rgba(255, 45, 107, 0.35);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 45, 107, 0.1),
+    inset 0 0 60px rgba(255, 45, 107, 0.03);
+}
+
+.skill-card:hover {
   border-color: rgba(255, 45, 107, 0.25);
   box-shadow:
     0 24px 48px rgba(0, 0, 0, 0.4),
-    0 0 0 1px rgba(255, 45, 107, 0.1);
+    0 0 0 1px rgba(255, 45, 107, 0.1),
+    inset 0 0 40px rgba(0, 229, 255, 0.03);
 }
+
 .skill-card:hover::after {
   transform: scaleX(1);
 }
@@ -1606,4 +1895,333 @@ footer a {
 }
 .gallery-thumb:hover {
   border-color: rgba(255, 45, 107, 0.5);
+}
+/* ══════════════════════════════════════════════
+   3D TILT EFFECTS — ADD TO END OF style.css
+   ══════════════════════════════════════════════ */
+
+/* 3D perspective on cards */
+.project-card,
+.skill-card {
+  transform-style: preserve-3d;
+  transition:
+    transform 0.4s cubic-bezier(0.03, 0.98, 0.52, 0.99),
+    border-color 0.4s,
+    box-shadow 0.4s;
+  will-change: transform;
+}
+
+.project-card:hover {
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 45, 107, 0.1),
+    inset 0 0 60px rgba(255, 45, 107, 0.03);
+}
+
+.skill-card:hover {
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 45, 107, 0.1),
+    inset 0 0 40px rgba(0, 229, 255, 0.03);
+}
+
+/* 3D depth on inner elements */
+.project-content,
+.skill-pct,
+.feature-icon {
+  transform: translateZ(20px);
+}
+
+.proj-float-badges {
+  transform: translateZ(40px);
+}
+
+/* Glowing border on hover */
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 21px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 45, 107, 0),
+    rgba(0, 229, 255, 0)
+  );
+  z-index: -1;
+  transition: background 0.5s;
+}
+
+.project-card:hover::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 45, 107, 0.15),
+    rgba(0, 229, 255, 0.1)
+  );
+}
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 13px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 45, 107, 0),
+    rgba(0, 229, 255, 0)
+  );
+  z-index: -1;
+  transition: background 0.5s;
+}
+
+.skill-card:hover::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 45, 107, 0.12),
+    rgba(0, 229, 255, 0.08)
+  );
+}
+
+/* Shine effect on hover */
+.project-card::after,
+.skill-card .skill-shine {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.03),
+    transparent
+  );
+  transition: left 0.6s;
+  pointer-events: none;
+}
+
+.project-card:hover::after {
+  left: 100%;
+}
+
+/* ── WORK EXPERIENCE SECTION ── */
+.work-grid {
+  display: grid;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.exp-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: start;
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s,
+    box-shadow 0.4s;
+  transform-style: preserve-3d;
+}
+
+.exp-card.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.exp-card:hover {
+  border-color: rgba(255, 45, 107, 0.3);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 45, 107, 0.1);
+}
+
+.exp-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--accent1), var(--accent2));
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.exp-card:hover::before {
+  transform: scaleY(1);
+}
+
+.exp-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.exp-card-icon.stage {
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  color: var(--accent2);
+}
+
+.exp-card-icon.emploi {
+  background: rgba(255, 45, 107, 0.1);
+  border: 1px solid rgba(255, 45, 107, 0.2);
+  color: var(--accent1);
+}
+
+.exp-card-body {
+  min-width: 0;
+}
+
+.exp-date {
+  font-family: "Space Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.exp-date.stage {
+  color: var(--accent2);
+}
+.exp-date.emploi {
+  color: var(--accent1);
+}
+
+.exp-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.exp-status.current {
+  background: rgba(255, 45, 107, 0.1);
+  border: 1px solid rgba(255, 45, 107, 0.25);
+  color: var(--accent1);
+}
+
+.exp-status.completed {
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  color: var(--accent2);
+}
+
+.exp-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: blink 2s infinite;
+}
+
+.exp-status.current .exp-status-dot {
+  background: var(--accent1);
+}
+.exp-status.completed .exp-status-dot {
+  background: var(--accent2);
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.exp-company {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.exp-role {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.exp-tag {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: "Space Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+/* Modal URL button / placeholder */
+.modal-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: var(--accent1);
+  color: #fff;
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  margin-bottom: 24px;
+  transition: all 0.3s;
+}
+
+.modal-link-btn:hover {
+  background: #d63851;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 45, 107, 0.3);
+}
+
+.modal-url-placeholder {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px dashed var(--border);
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-bottom: 24px;
+}
+
+/* Responsive for exp-card */
+@media (max-width: 600px) {
+  .exp-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }

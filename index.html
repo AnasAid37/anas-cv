@@ -50,9 +50,12 @@
           >
         </li>
         <li>
-          <a href="#experience" data-fr="Expérience" data-en="Experience"
+          <a href="#work" data-fr="Expérience" data-en="Experience"
             >Expérience</a
           >
+        </li>
+        <li>
+          <a href="#experience" data-fr="Projets" data-en="Projects">Projets</a>
         </li>
         <li>
           <a href="#skills" data-fr="Compétences" data-en="Skills"
@@ -250,15 +253,154 @@
 
     <div class="divider"></div>
 
-    <!-- EXPERIENCE — GALLERY -->
+    <!-- WORK EXPERIENCE -->
+    <section id="work">
+      <div class="exp-inner">
+        <p
+          class="section-label reveal-clip-left"
+          data-fr="Expérience Pro"
+          data-en="Work Experience"
+        >
+          Expérience Pro
+        </p>
+        <h2 class="section-title reveal">
+          <span data-fr="Parcours" data-en="Career">Parcours</span><br />
+          <em data-fr="professionnel" data-en="path">professionnel</em>
+        </h2>
+
+        <div class="work-grid">
+          <!-- Current Job -->
+          <div class="exp-card">
+            <div class="exp-card-icon emploi">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="exp-card-body">
+              <div
+                class="exp-date emploi"
+                data-fr="MARS 2026 — AUJOURD'HUI"
+                data-en="MARCH 2026 — PRESENT"
+              >
+                MARS 2026 — AUJOURD'HUI
+              </div>
+              <div class="exp-status current">
+                <span class="exp-status-dot"></span>
+                <span data-fr="En poste" data-en="Currently employed"
+                  >En poste</span
+                >
+              </div>
+              <div class="exp-company">EF2C Maroc</div>
+              <div
+                class="exp-role"
+                data-fr="Développeur Web Full Stack"
+                data-en="Full Stack Web Developer"
+              >
+                Développeur Web Full Stack
+              </div>
+              <div class="exp-tags">
+                <span class="exp-tag">Nextjs</span>
+                <span class="exp-tag">NestJs</span>
+                <span class="exp-tag">PostgreSQL</span>
+                <span class="exp-tag">Docker</span>
+                <span class="exp-tag">Obuntu</span>
+                <span class="exp-tag">Prizma</span>
+                <span class="exp-tag">Git</span>
+                <span class="exp-tag">Gitlab</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Internship -->
+          <div class="exp-card">
+            <div class="exp-card-icon stage">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="exp-card-body">
+              <div
+                class="exp-date stage"
+                data-fr="DÉCEMBRE 2025 — FÉVRIER 2026"
+                data-en="DECEMBER 2025 — FEBRUARY 2026"
+              >
+                DÉCEMBRE 2025 — FÉVRIER 2026
+              </div>
+              <div class="exp-status completed">
+                <span class="exp-status-dot"></span>
+                <span data-fr="Stage terminé" data-en="Internship completed"
+                  >Stage terminé</span
+                >
+              </div>
+              <div class="exp-company">EF2C Maroc</div>
+              <div
+                class="exp-role"
+                data-fr="Stage pré-embauche — Développeur Web Full Stack"
+                data-en="Pre-employment internship — Full Stack Web Developer"
+              >
+                Stage pré-embauche — Développeur Web Full Stack
+              </div>
+              <div class="exp-tags">
+                <span class="exp-tag">Nextjs</span>
+                <span class="exp-tag">PostgreSQL</span>
+                <span class="exp-tag">Docker</span>
+                <span class="exp-tag">Obuntu</span>
+                <span class="exp-tag">Git</span>
+                <span class="exp-tag">Gitlab</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Freelance -->
+          <div class="exp-card">
+            <div class="exp-card-icon stage">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <div class="exp-card-body">
+              <div
+                class="exp-date stage"
+                data-fr="2023 — 2025"
+                data-en="2023 — 2025"
+              >
+                2023 — 2025
+              </div>
+              <div class="exp-status completed">
+                <span class="exp-status-dot"></span>
+                <span data-fr="Freelance" data-en="Freelance">Freelance</span>
+              </div>
+              <div
+                class="exp-company"
+                data-fr="Auto-entrepreneur"
+                data-en="Self-employed"
+              >
+                Auto-entrepreneur
+              </div>
+              <div
+                class="exp-role"
+                data-fr="Développeur Web & E-commerce — Projets clients et personnels"
+                data-en="Web Developer & E-commerce — Client and personal projects"
+              >
+                Développeur Web & E-commerce — Projets clients et personnels
+              </div>
+              <div class="exp-tags">
+                <span class="exp-tag">WordPress</span>
+                <span class="exp-tag">PHP</span>
+                <span class="exp-tag">Node.js</span>
+                <span class="exp-tag">SEO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PROJECTS -->
     <section id="experience">
       <div class="exp-inner">
         <p
           class="section-label reveal-clip-right"
-          data-fr="Expérience"
-          data-en="Experience"
+          data-fr="Projets"
+          data-en="Projects"
         >
-          Expérience
+          Projets
         </p>
         <h2 class="section-title reveal">
           Projets &amp;
@@ -266,7 +408,7 @@
         </h2>
 
         <div class="projects-gallery">
-          <!-- 1. SmartTrip — Featured full width -->
+          <!-- 1. SmartTrip — Featured -->
           <div class="project-card" data-project="smarttrip">
             <div class="proj-hover-cta">
               <button class="proj-cta-btn">
@@ -308,18 +450,17 @@
               </div>
               <p
                 class="proj-desc"
-                data-fr="Plateforme web complète de recommandations de voyages avec IA, cartes interactives Leaflet, chatbot Claude, emails de bienvenue automatiques et interface multilingue EN/FR/AR."
-                data-en="Full-featured travel recommendation web platform with AI, interactive Leaflet maps, Claude chatbot, automated welcome emails and multilingual EN/FR/AR interface."
+                data-fr="Plateforme web de recommandations de voyages avec IA, cartes Leaflet, chatbot Claude et interface multilingue EN/FR/AR."
+                data-en="Travel recommendation platform with AI, Leaflet maps, Claude chatbot and multilingual EN/FR/AR interface."
               >
-                Plateforme web complète de recommandations de voyages avec IA,
-                cartes interactives Leaflet, chatbot Claude, emails de bienvenue
-                automatiques et interface multilingue EN/FR/AR.
+                Plateforme web de recommandations de voyages avec IA, cartes
+                Leaflet, chatbot Claude et interface multilingue EN/FR/AR.
               </p>
             </div>
           </div>
 
-          <!-- 2. GestionPlus -->
-          <div class="project-card" data-project="gestionplus">
+          <!-- 2. StockPro — Featured -->
+          <div class="project-card" data-project="stockpro">
             <div class="proj-hover-cta">
               <button class="proj-cta-btn">
                 <i class="fas fa-eye"></i> Voir le projet
@@ -327,36 +468,44 @@
             </div>
             <div class="project-visual proj-bg-2">
               <div class="proj-float-badges">
-                <span class="proj-float-badge a1">Laravel 12</span>
-                <span class="proj-float-badge a2">PHP 8.2</span>
+                <span class="proj-float-badge a1">Laravel 11</span>
+                <span class="proj-float-badge a2">Sanctum</span>
                 <span class="proj-float-badge">MySQL</span>
-                <span class="proj-float-badge a3">Dark Mode</span>
-                <span class="proj-float-badge">Multi-langue</span>
-                <span class="proj-float-badge">PDF/Rapports</span>
+                <span class="proj-float-badge a3">WhatsApp</span>
+                <span class="proj-float-badge">2FA</span>
+                <span class="proj-float-badge a1">PDF Reports</span>
+                <span class="proj-float-badge a2">i18n FR/AR/EN</span>
+                <span class="proj-float-badge">Dark Mode</span>
               </div>
-              <span class="project-visual-icon">📊</span>
+              <span class="project-visual-icon">📦</span>
             </div>
             <div class="project-content">
               <span
                 class="proj-year-tag"
-                data-fr="2025 · Freelance · Casablanca"
-                data-en="2025 · Freelance · Casablanca"
-                >2025 · Freelance · Casablanca</span
+                data-fr="2025 · Projet Personnel · SaaS"
+                data-en="2025 · Personal Project · SaaS"
+                >2025 · Projet Personnel · SaaS</span
               >
+              <div class="proj-star">
+                ⭐
+                <span data-fr="Projet Phare" data-en="Featured Project"
+                  >Projet Phare</span
+                >
+              </div>
               <div
                 class="proj-title"
-                data-fr="GestionPlus.ma — ERP Gestion Commerciale"
-                data-en="GestionPlus.ma — Commercial Management ERP"
+                data-fr="StockPro — SaaS Gestion de Stock & Crédits"
+                data-en="StockPro — Stock & Credit Management SaaS"
               >
-                GestionPlus.ma — ERP Gestion Commerciale
+                StockPro — SaaS Gestion de Stock & Crédits
               </div>
               <p
                 class="proj-desc"
-                data-fr="Système de gestion complet : stock, crédits, fournisseurs, entrées, dark/light mode, rapports PDF et panel super-admin."
-                data-en="Complete management system: inventory, credits, suppliers, entries, dark/light mode, PDF reports and super-admin panel."
+                data-fr="SaaS complet pour PME marocaines : stock, crédits, WhatsApp, rapports PDF, 2FA, portail client et interface trilingue."
+                data-en="Complete SaaS for Moroccan SMBs: stock, credits, WhatsApp, PDF reports, 2FA, client portal and trilingual interface."
               >
-                Système de gestion complet : stock, crédits, fournisseurs,
-                entrées, dark/light mode, rapports PDF et panel super-admin.
+                SaaS complet pour PME marocaines : stock, crédits, WhatsApp,
+                rapports PDF, 2FA, portail client et interface trilingue.
               </p>
             </div>
           </div>
@@ -386,18 +535,17 @@
               >
               <div
                 class="proj-title"
-                data-fr="Pneumatique Aqabli — Site &amp; RDV"
-                data-en="Pneumatique Aqabli — Website &amp; Appointments"
+                data-fr="Pneumatique Aqabli — Site & RDV"
+                data-en="Pneumatique Aqabli — Website & Appointments"
               >
                 Pneumatique Aqabli — Site &amp; RDV
               </div>
               <p
                 class="proj-desc"
-                data-fr="Site officiel avec prise de rendez-vous en ligne et panel admin pour gérer commandes et produits."
-                data-en="Official website with online appointment booking and admin panel to manage orders and products."
+                data-fr="Site officiel avec prise de rendez-vous en ligne et panel admin."
+                data-en="Official website with online appointment booking and admin panel."
               >
-                Site officiel avec prise de rendez-vous en ligne et panel admin
-                pour gérer commandes et produits.
+                Site officiel avec prise de rendez-vous en ligne et panel admin.
               </p>
             </div>
           </div>
@@ -433,11 +581,11 @@
               </div>
               <p
                 class="proj-desc"
-                data-fr="Application de livraison avec React front-end et Laravel API back-end, projet de groupe."
-                data-en="Delivery app with React front-end and Laravel API back-end, group project."
+                data-fr="Application de livraison avec React et Laravel API, projet de groupe."
+                data-en="Delivery app with React and Laravel API, group project."
               >
-                Application de livraison avec React front-end et Laravel API
-                back-end, projet de groupe.
+                Application de livraison avec React et Laravel API, projet de
+                groupe.
               </p>
             </div>
           </div>
@@ -461,24 +609,24 @@
             <div class="project-content">
               <span
                 class="proj-year-tag"
-                data-fr="2023 — Aujourd'hui · Personnel"
-                data-en="2023 — Present · Personal"
-                >2023 — Aujourd'hui · Personnel</span
+                data-fr="2023 — 2025 · Personnel"
+                data-en="2023 — 2025 · Personal"
+                >2023 — 2025 · Personnel</span
               >
               <div
                 class="proj-title"
-                data-fr="Auto-entrepreneur — Digital &amp; E-commerce"
-                data-en="Freelancer — Digital &amp; E-commerce"
+                data-fr="Auto-entrepreneur — Digital & E-commerce"
+                data-en="Freelancer — Digital & E-commerce"
               >
                 Auto-entrepreneur — Digital &amp; E-commerce
               </div>
               <p
                 class="proj-desc"
-                data-fr="FleetIPTV, Tsyshoop et projets Node.js/Python avec stratégies SEO et affiliation."
-                data-en="FleetIPTV, Tsyshoop and Node.js/Python projects with SEO strategies and affiliate marketing."
+                data-fr="FleetIPTV, Tsyshoop et projets Node.js/Python avec SEO et affiliation."
+                data-en="FleetIPTV, Tsyshoop and Node.js/Python projects with SEO and affiliates."
               >
-                FleetIPTV, Tsyshoop et projets Node.js/Python avec stratégies
-                SEO et affiliation.
+                FleetIPTV, Tsyshoop et projets Node.js/Python avec SEO et
+                affiliation.
               </p>
             </div>
           </div>
@@ -503,106 +651,192 @@
         </h2>
         <div class="skills-grid">
           <div class="skill-card from-left d1" data-pct="95">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-html5"></i>
+              <i class="fab fa-css3-alt"></i>
+            </div>
             <div class="skill-pct">95%</div>
             <div class="skill-name">HTML / CSS</div>
             <div class="skill-bar-track">
               <div class="skill-bar-fill"></div>
             </div>
           </div>
+
           <div class="skill-card from-right d1" data-pct="95">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-php"></i>
+            </div>
             <div class="skill-pct">95%</div>
             <div class="skill-name">PHP</div>
             <div class="skill-bar-track">
               <div class="skill-bar-fill"></div>
             </div>
           </div>
+
           <div class="skill-card from-left d2" data-pct="93">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-js-square"></i>
+            </div>
             <div class="skill-pct">93%</div>
             <div class="skill-name">JavaScript</div>
             <div class="skill-bar-track">
               <div class="skill-bar-fill"></div>
             </div>
           </div>
+
           <div class="skill-card from-right d2" data-pct="92">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-react"></i>
+            </div>
             <div class="skill-pct">92%</div>
             <div class="skill-name">ReactJS</div>
             <div class="skill-bar-track">
               <div class="skill-bar-fill"></div>
             </div>
           </div>
+
           <div class="skill-card from-left d3" data-pct="90">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-laravel"></i>
+            </div>
             <div class="skill-pct">90%</div>
             <div class="skill-name">Laravel</div>
             <div class="skill-bar-track">
               <div class="skill-bar-fill"></div>
             </div>
           </div>
+
           <div class="skill-card from-right d3" data-pct="88">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-wordpress"></i>
+            </div>
             <div class="skill-pct">88%</div>
             <div class="skill-name">WordPress</div>
             <div class="skill-bar-track">
               <div class="skill-bar-fill"></div>
             </div>
           </div>
+
           <div class="skill-card from-left d4" data-pct="85">
+            <div class="skill-icon-wrap">
+              <i class="fas fa-database"></i>
+            </div>
             <div class="skill-pct">85%</div>
             <div class="skill-name">SQL / NoSQL</div>
             <div class="skill-bar-track">
               <div class="skill-bar-fill"></div>
             </div>
           </div>
+
           <div class="skill-card from-right d4" data-pct="80">
+            <div class="skill-icon-wrap">
+              <i class="fas fa-server"></i>
+            </div>
             <div class="skill-pct">80%</div>
             <div class="skill-name">PostgreSQL</div>
             <div class="skill-bar-track">
               <div class="skill-bar-fill"></div>
             </div>
           </div>
+
           <div class="skill-card from-left d5" data-pct="85">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-git-alt"></i>
+            </div>
             <div class="skill-pct">85%</div>
             <div class="skill-name">Git / GitHub</div>
             <div class="skill-bar-track">
               <div class="skill-bar-fill"></div>
             </div>
           </div>
+
           <div class="skill-card from-right d5" data-pct="75">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-docker"></i>
+            </div>
             <div class="skill-pct">75%</div>
             <div class="skill-name">Docker</div>
             <div class="skill-bar-track">
               <div class="skill-bar-fill"></div>
             </div>
           </div>
+
           <div class="skill-card from-left d6" data-pct="90">
+            <div class="skill-icon-wrap">
+              <i class="fas fa-code"></i>
+            </div>
             <div class="skill-pct">90%</div>
             <div class="skill-name">VS Code</div>
             <div class="skill-bar-track">
               <div class="skill-bar-fill"></div>
             </div>
           </div>
+
           <div class="skill-card from-right d6" data-pct="78">
+            <div class="skill-icon-wrap">
+              <i class="fab fa-linux"></i>
+            </div>
             <div class="skill-pct">78%</div>
             <div class="skill-name">Linux</div>
             <div class="skill-bar-track">
               <div class="skill-bar-fill"></div>
             </div>
           </div>
+
           <div class="skill-card from-left d1" data-pct="80">
+            <div class="skill-icon-wrap">
+              <i class="fas fa-chart-line"></i>
+            </div>
             <div class="skill-pct">80%</div>
             <div class="skill-name">SEO &amp; Publicité</div>
             <div class="skill-bar-track">
               <div class="skill-bar-fill"></div>
             </div>
           </div>
+
           <div class="skill-card from-right d1" data-pct="80">
+            <div class="skill-icon-wrap">
+              <i class="fas fa-film"></i>
+            </div>
             <div class="skill-pct">80%</div>
             <div class="skill-name">Montage Vidéo</div>
             <div class="skill-bar-track">
               <div class="skill-bar-fill"></div>
             </div>
           </div>
+
           <div class="skill-card from-left d2" data-pct="85">
+            <div class="skill-icon-wrap">
+              <i class="fas fa-users-cog"></i>
+            </div>
             <div class="skill-pct">85%</div>
             <div class="skill-name">Agile &amp; Teamwork</div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill"></div>
+            </div>
+          </div>
+          <div class="skill-card from-right d2" data-pct="78">
+            <div class="skill-icon-wrap"><i class="fab fa-react"></i></div>
+            <div class="skill-pct">78%</div>
+            <div class="skill-name">Next.js</div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill"></div>
+            </div>
+          </div>
+
+          <div class="skill-card from-left d3" data-pct="75">
+            <div class="skill-icon-wrap"><i class="fas fa-cube"></i></div>
+            <div class="skill-pct">75%</div>
+            <div class="skill-name">Prisma</div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill"></div>
+            </div>
+          </div>
+
+          <div class="skill-card from-right d3" data-pct="70">
+            <div class="skill-icon-wrap"><i class="fas fa-key"></i></div>
+            <div class="skill-pct">70%</div>
+            <div class="skill-name">Keycloak</div>
             <div class="skill-bar-track">
               <div class="skill-bar-fill"></div>
             </div>
@@ -626,7 +860,8 @@
           </p>
           <h2 class="section-title reveal" style="margin-bottom: 24px">
             <span data-fr="Travaillons" data-en="Let's work">Travaillons</span
-            ><br /><em data-fr="ensemble" data-en="together">ensemble</em>
+            ><br />
+            <em data-fr="ensemble" data-en="together">ensemble</em>
           </h2>
           <p
             class="contact-big-text reveal"
@@ -707,10 +942,6 @@
       >
     </footer>
 
-    <script
-      data-cfasync="false"
-      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
-    ></script>
     <script src="js/main.js"></script>
   </body>
 </html>
